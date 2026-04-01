@@ -1,0 +1,183 @@
+2026-03-30 17:22:17.388 +05:30 [INF] Service Started
+2026-03-30 17:22:17.731 +05:30 [INF] Bulk QR Encryption (No Image) started at "2026-03-30T17:22:17.7310058+05:30"
+2026-03-30 17:22:18.350 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-30 17:22:18.350 +05:30 [INF] Hosting environment: Development
+2026-03-30 17:22:18.350 +05:30 [INF] Content root path: C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service
+2026-03-30 17:25:24.924 +05:30 [INF] Application is shutting down...
+2026-03-30 17:25:24.962 +05:30 [WRN] Process cancelled!
+2026-03-30 17:25:25.649 +05:30 [ERR] ❌ SP Bulk Insert Failed. Records: 724
+Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UQ_RollCode_RollNo'. Cannot insert duplicate key in object 'dbo.EXAM_QREncryptedData'. The duplicate key value is (106, 2601001).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at BSEBExamResult_QRGenerate.Data.DbHelper.BulkSaveEncryptedDataAsync(List`1 records) in C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service\Data\DbHelper.cs:line 185
+ClientConnectionId:ba311060-be97-44ce-8e6c-789448e18db2
+Error Number:2627,State:1,Class:14
+2026-03-30 17:25:25.763 +05:30 [ERR] BackgroundService failed
+Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UQ_RollCode_RollNo'. Cannot insert duplicate key in object 'dbo.EXAM_QREncryptedData'. The duplicate key value is (106, 2601001).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at BSEBExamResult_QRGenerate.Data.DbHelper.BulkSaveEncryptedDataAsync(List`1 records) in C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service\Data\DbHelper.cs:line 185
+   at ProcessingService.ProcessAsync(CancellationToken token) in C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service\Services\ProcessingService.cs:line 89
+   at Worker.ExecuteAsync(CancellationToken stoppingToken) in C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service\Worker.cs:line 19
+   at Microsoft.Extensions.Hosting.Internal.Host.TryExecuteBackgroundServiceAsync(BackgroundService backgroundService)
+ClientConnectionId:ba311060-be97-44ce-8e6c-789448e18db2
+Error Number:2627,State:1,Class:14
+2026-03-30 17:25:25.765 +05:30 [FTL] The HostOptions.BackgroundServiceExceptionBehavior is configured to StopHost. A BackgroundService has thrown an unhandled exception, and the IHost instance is stopping. To avoid this behavior, configure this to Ignore; however the BackgroundService will not be restarted.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UQ_RollCode_RollNo'. Cannot insert duplicate key in object 'dbo.EXAM_QREncryptedData'. The duplicate key value is (106, 2601001).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at BSEBExamResult_QRGenerate.Data.DbHelper.BulkSaveEncryptedDataAsync(List`1 records) in C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service\Data\DbHelper.cs:line 185
+   at ProcessingService.ProcessAsync(CancellationToken token) in C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service\Services\ProcessingService.cs:line 89
+   at Worker.ExecuteAsync(CancellationToken stoppingToken) in C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service\Worker.cs:line 19
+   at Microsoft.Extensions.Hosting.Internal.Host.TryExecuteBackgroundServiceAsync(BackgroundService backgroundService)
+ClientConnectionId:ba311060-be97-44ce-8e6c-789448e18db2
+Error Number:2627,State:1,Class:14
+2026-03-30 17:26:30.631 +05:30 [INF] Service Started
+2026-03-30 17:26:30.942 +05:30 [INF] Bulk QR Encryption (No Image) started at "2026-03-30T17:26:30.9401449+05:30"
+2026-03-30 17:26:31.552 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-30 17:26:31.553 +05:30 [INF] Hosting environment: Development
+2026-03-30 17:26:31.553 +05:30 [INF] Content root path: C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service
+2026-03-30 17:29:47.066 +05:30 [INF] Application is shutting down...
+2026-03-30 17:29:47.097 +05:30 [WRN] Process cancelled!
+2026-03-30 17:29:47.787 +05:30 [ERR] ❌ SP Bulk Insert Failed. Records: 1736
+Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UQ_RollCode_RollNo'. Cannot insert duplicate key in object 'dbo.EXAM_QREncryptedData'. The duplicate key value is (105, 2601001).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at BSEBExamResult_QRGenerate.Data.DbHelper.BulkSaveEncryptedDataAsync(List`1 records) in C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service\Data\DbHelper.cs:line 185
+ClientConnectionId:5c2ae63d-31fa-4522-850d-9d618feaecd4
+Error Number:2627,State:1,Class:14
+2026-03-30 17:29:47.902 +05:30 [ERR] BackgroundService failed
+Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UQ_RollCode_RollNo'. Cannot insert duplicate key in object 'dbo.EXAM_QREncryptedData'. The duplicate key value is (105, 2601001).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at BSEBExamResult_QRGenerate.Data.DbHelper.BulkSaveEncryptedDataAsync(List`1 records) in C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service\Data\DbHelper.cs:line 185
+   at ProcessingService.ProcessAsync(CancellationToken token) in C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service\Services\ProcessingService.cs:line 89
+   at Worker.ExecuteAsync(CancellationToken stoppingToken) in C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service\Worker.cs:line 19
+   at Microsoft.Extensions.Hosting.Internal.Host.TryExecuteBackgroundServiceAsync(BackgroundService backgroundService)
+ClientConnectionId:5c2ae63d-31fa-4522-850d-9d618feaecd4
+Error Number:2627,State:1,Class:14
+2026-03-30 17:29:47.904 +05:30 [FTL] The HostOptions.BackgroundServiceExceptionBehavior is configured to StopHost. A BackgroundService has thrown an unhandled exception, and the IHost instance is stopping. To avoid this behavior, configure this to Ignore; however the BackgroundService will not be restarted.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UQ_RollCode_RollNo'. Cannot insert duplicate key in object 'dbo.EXAM_QREncryptedData'. The duplicate key value is (105, 2601001).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at BSEBExamResult_QRGenerate.Data.DbHelper.BulkSaveEncryptedDataAsync(List`1 records) in C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service\Data\DbHelper.cs:line 185
+   at ProcessingService.ProcessAsync(CancellationToken token) in C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service\Services\ProcessingService.cs:line 89
+   at Worker.ExecuteAsync(CancellationToken stoppingToken) in C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service\Worker.cs:line 19
+   at Microsoft.Extensions.Hosting.Internal.Host.TryExecuteBackgroundServiceAsync(BackgroundService backgroundService)
+ClientConnectionId:5c2ae63d-31fa-4522-850d-9d618feaecd4
+Error Number:2627,State:1,Class:14
+2026-03-30 17:39:23.906 +05:30 [INF] Service Started
+2026-03-30 17:39:24.656 +05:30 [INF] Bulk QR Encryption (No Image) started at "2026-03-30T17:39:24.6547362+05:30"
+2026-03-30 17:39:25.309 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-30 17:39:25.309 +05:30 [INF] Hosting environment: Development
+2026-03-30 17:39:25.309 +05:30 [INF] Content root path: C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service
+2026-03-30 17:50:00.130 +05:30 [INF] Application is shutting down...
+2026-03-30 17:50:00.340 +05:30 [WRN] Process cancelled!
+2026-03-30 17:50:03.110 +05:30 [ERR] ❌ SP Bulk Insert Failed. Records: 4715
+Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UQ_RollCode_RollNo'. Cannot insert duplicate key in object 'dbo.EXAM_QREncryptedData'. The duplicate key value is (105, 2601001).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at BSEBExamResult_QRGenerate.Data.DbHelper.BulkSaveEncryptedDataAsync(List`1 records) in C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service\Data\DbHelper.cs:line 185
+ClientConnectionId:41b9f4cb-7f48-45a9-a0ba-01add8cc7651
+Error Number:2627,State:1,Class:14
+2026-03-30 17:50:03.277 +05:30 [ERR] BackgroundService failed
+Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UQ_RollCode_RollNo'. Cannot insert duplicate key in object 'dbo.EXAM_QREncryptedData'. The duplicate key value is (105, 2601001).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at BSEBExamResult_QRGenerate.Data.DbHelper.BulkSaveEncryptedDataAsync(List`1 records) in C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service\Data\DbHelper.cs:line 185
+   at ProcessingService.ProcessAsync(CancellationToken token) in C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service\Services\ProcessingService.cs:line 89
+   at Worker.ExecuteAsync(CancellationToken stoppingToken) in C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service\Worker.cs:line 19
+   at Microsoft.Extensions.Hosting.Internal.Host.TryExecuteBackgroundServiceAsync(BackgroundService backgroundService)
+ClientConnectionId:41b9f4cb-7f48-45a9-a0ba-01add8cc7651
+Error Number:2627,State:1,Class:14
+2026-03-30 17:50:03.283 +05:30 [FTL] The HostOptions.BackgroundServiceExceptionBehavior is configured to StopHost. A BackgroundService has thrown an unhandled exception, and the IHost instance is stopping. To avoid this behavior, configure this to Ignore; however the BackgroundService will not be restarted.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UQ_RollCode_RollNo'. Cannot insert duplicate key in object 'dbo.EXAM_QREncryptedData'. The duplicate key value is (105, 2601001).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at BSEBExamResult_QRGenerate.Data.DbHelper.BulkSaveEncryptedDataAsync(List`1 records) in C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service\Data\DbHelper.cs:line 185
+   at ProcessingService.ProcessAsync(CancellationToken token) in C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service\Services\ProcessingService.cs:line 89
+   at Worker.ExecuteAsync(CancellationToken stoppingToken) in C:\Jinal\Git\BSEB_QR_Encrypt_Service\BSEB_QR_Encrypt_Service\Worker.cs:line 19
+   at Microsoft.Extensions.Hosting.Internal.Host.TryExecuteBackgroundServiceAsync(BackgroundService backgroundService)
+ClientConnectionId:41b9f4cb-7f48-45a9-a0ba-01add8cc7651
+Error Number:2627,State:1,Class:14
